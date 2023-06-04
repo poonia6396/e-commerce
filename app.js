@@ -28,10 +28,9 @@ app.use(`${api}/users`, usersRoutes);
 app.use(`${api}/orders`, ordersRoutes);
 
 //Database
-mongoose.connect(process.env.CONNECTION_STRING, {
+mongoose.connect(process.env.MONGODB_URL, {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
-    dbName: 'eshop-database'
+    useUnifiedTopology: true
 })
 .then(()=>{
     console.log('Database Connection is ready...')
